@@ -42,16 +42,16 @@ namespace JsonDemo.Controllers
             }
             return RedirectToAction("Index");
         }
-[HttpPost]
-public ActionResult Edit(Student student, List<int> selectedCoursesId)
-{
-    if (ModelState.IsValid)
-    {
-        DB.Students.Update(student, selectedCoursesId);
-        return RedirectToAction("Index");
-    }
-    return View(student);
-}
+        [HttpPost]
+        public ActionResult Edit(Student student, List<int> selectedCoursesId)
+        {
+            if (ModelState.IsValid)
+            {
+                DB.Students.Update(student, selectedCoursesId);
+                return RedirectToAction("Index");
+            }
+            return View(student);
+        }
         public ActionResult Delete(int id)
         {
             DB.Students.Delete(id);

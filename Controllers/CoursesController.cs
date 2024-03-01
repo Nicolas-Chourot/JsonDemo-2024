@@ -46,8 +46,7 @@ namespace JsonDemo.Controllers
         {
                 if (ModelState.IsValid)
                 {
-                    DB.Courses.Update(course);
-                    course.UpdateRegistrations(SelectedStudentsId);
+                    DB.Courses.Update(course, SelectedStudentsId);
                     return RedirectToAction("Index");
                 }
                 return View(course);
